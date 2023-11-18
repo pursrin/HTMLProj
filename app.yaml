@@ -1,0 +1,6 @@
+runtime: python39  # Use the Python 3.9 runtime, you can change it based on your requirements
+
+handlers:
+- url: /.*
+  static_files: welcome.html
+  upload: welcome.html
