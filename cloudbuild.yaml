@@ -1,6 +1,5 @@
 steps:
-- name: 'node:14'
-  args: ['npm', 'install']
+  - name: 'node:14'
     args:
       - install
       - '-r'
