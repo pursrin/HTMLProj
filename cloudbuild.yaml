@@ -1,1 +1,22 @@
-
+steps:
+  - name: 'gcr.io/cloud-builders/npm'
+    args:
+      - install
+      - '-r'
+      - requirements.txt
+    entrypoint: pip
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+      - config
+      - set
+      - project
+      - terraformgcp-403915
+    entrypoint: gcloud
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+      - app
+      - deploy
+    entrypoint: gcloud
+    timeout: 1600s
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
