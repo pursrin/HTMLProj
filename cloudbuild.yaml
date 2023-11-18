@@ -1,10 +1,13 @@
 steps:
-  - name: 'node:14'
-    args:
-      - install
-      - '-r'
-      - requirements.txt
-    entrypoint: pip
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', 'welcome.html', '$$STAGING_DIR']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy']
+
   - name: gcr.io/cloud-builders/gcloud
     args:
       - config
