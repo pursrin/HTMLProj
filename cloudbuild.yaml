@@ -1,6 +1,6 @@
 steps:
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
+  - name: 'node:14'
+    args: ['npm', 'install']
   - name: 'gcr.io/cloud-builders/gsutil'
     args: ['cp', 'welcome.html', '$$STAGING_DIR']
   - name: 'gcr.io/cloud-builders/gcloud'
