@@ -1,5 +1,6 @@
 steps:
-  - name: 'gcr.io/cloud-builders/npm'
+- name: 'node:14'
+  args: ['npm', 'install']
     args:
       - install
       - '-r'
